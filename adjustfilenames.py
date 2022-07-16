@@ -2,21 +2,21 @@ import sys
 import os
 
 class AdjustFileNames:
-    def __init__(self, diractory_path = os.path.abspath(os.getcwd())):
+    def __init__(self, directory_path = os.path.abspath(os.getcwd())):
         self.toremove = ['.adjustfilenames.py.swp', 'adjustfilenames.py']
-        self.diractory_path = diractory_path
-        self.checkDiractory()
+        self.directory_path = directory_path
+        self.checkDirectory()
 
     def __del__(self):
         pass
 
-    def checkDiractory(self):
-        if os.path.isdir(self.diractory_path) == False:
-            print('The specified diractory does not exist.')
+    def checkDirectory(self):
+        if os.path.isdir(self.directory_path) == False:
+            print('The specified directory does not exist.')
             exit()
 
     def adjust(self):
-        names = os.listdir(self.diractory_path)
+        names = os.listdir(self.directory_path)
 
         #remove self __file__ names from the list
         for rname in self.toremove:
@@ -31,7 +31,7 @@ class AdjustFileNames:
             newname = name.replace('_','') 
 
             #rename file
-            os.rename(self.diractory_path + '/' + name, self.diractory_path + '/' + newname)
+            os.rename(self.directory_path + '/' + name, self.directory_path + '/' + newname)
 
 
 if __name__ == '__main__':
@@ -43,5 +43,5 @@ if __name__ == '__main__':
         path = sys.argv[1]
 
 
-    afn = AdjustFileNames(diractory_path = path)
+    afn = AdjustFileNames(directory_path = path)
     afn.adjust()
