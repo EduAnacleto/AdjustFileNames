@@ -1,7 +1,7 @@
-# Python module to adjust all the file names in a diractory
+# Python module to adjust all the file names in a directory
 
 For using this module, see the following example.
 
-python3 adjustfilenames.py 'diractory_path'
+python3 adjustfilenames.py 'directory_path'
 
-where 'diractory_path' must be the path of the diractory
+where 'directory_path' must be the path of the diractory
